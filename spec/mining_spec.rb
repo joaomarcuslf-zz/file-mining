@@ -16,17 +16,17 @@ describe Miner do
         end
 
         it 'deve cortar a string em pedaços e devolver a quantidade de palavras' do
-          expect(@mine_tester.mining(subject)).to eq "11 palavras"
+          expect(@mine_tester.mining(subject)).to eq "8 palavras"
         end
       end
 
-      context 'quando a frase é uma mistura'
+      context 'quando a frase é uma mistura' do
         subject do
           "É é, é- e e e p"
         end
 
         it 'deve tirar os simbolos desnecessários e devolver a quantidade de palavras' do
-          expect(@mine_tester.mining(subject)).to eq "4 palavras"
+          expect(@mine_tester.mining(subject)).to eq "11 palavras"
         end
       end
 
@@ -40,5 +40,6 @@ describe Miner do
           expect(@mine_tester.mining(subject)).to be_nil
         end
       end
+    end
   end
 end
