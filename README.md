@@ -7,7 +7,7 @@ Using **Ruby** language and **Rspec** framework to accomplish it.
 - [x] Specs for Miner class
 - [x] Miner class
 - [x] Word finder
-- [ ] Main code
+- [x] Main code
 - [ ] File finder
 
 _João Marcus de Lemos Fernandes_

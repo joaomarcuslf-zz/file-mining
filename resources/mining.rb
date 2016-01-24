@@ -33,6 +33,7 @@ class Miner
     file.each do |line|
       mining(line)
     end
+    file.close
   end
 
   def find(word)
