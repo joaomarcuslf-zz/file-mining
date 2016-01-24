@@ -2,7 +2,7 @@ require 'rspec'
 require_relative '../resources/mining'
 
 describe Miner do
-  context 'Recebendo apenas uma frase por vez para mineração' do
+  context 'Receiving one phrase per time to mine' do
 
     before {
       @mine_tester = Miner.new
@@ -10,33 +10,33 @@ describe Miner do
 
     describe '#mining' do
 
-      context 'quando com a frase é uma frase normal' do
+      context 'when it\'s a normal phrase' do
         subject do
-          "A linguagem Ruby é uma linguagem totalmente orientada a objeto"
+          "The Ruby language is a language totally object oriented"
         end
 
-        it 'deve cortar a string em pedaços e devolver a quantidade de palavras' do
-          expect(@mine_tester.mining(subject)).to eq "8 palavras"
+        it 'should cut the string and present words quantity' do
+          expect(@mine_tester.mining(subject)).to eq "8 words"
         end
       end
 
-      context 'quando a frase é uma mistura' do
+      context 'when it\'s a messy phrase' do
         subject do
           "É é, é- e e e p"
         end
 
-        it 'deve tirar os simbolos desnecessários e devolver a quantidade de palavras' do
-          expect(@mine_tester.mining(subject)).to eq "11 palavras"
+        it 'should take out the symbols and present the new words quantity' do
+          expect(@mine_tester.mining(subject)).to eq "12 words"
         end
       end
 
 
-      context 'quando a frase é uma frase vazia' do
+      context 'when it\' a empty phrase' do
         subject do
           ''
         end
 
-        it 'deve devolver nil' do
+        it 'should return nil' do
           expect(@mine_tester.mining(subject)).to be_nil
         end
       end

@@ -18,7 +18,7 @@ class Miner
       @@counter[elm] ||= 0
       @@counter[elm] += 1
     end
-    "#{@@counter.size} palavras"
+    "#{@@counter.size} words"
   end
 
   def show
