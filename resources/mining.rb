@@ -26,4 +26,20 @@ class Miner
       puts "#{key} - #{value}"
     end
   end
+
+  def mining_f(path)
+    file = File.open(path, 'r')
+
+    file.each do |line|
+      mining(line)
+    end
+  end
+
+  def find(word)
+    if @@counter.include? word
+      return "#{@@counter[word]} times"
+    else
+      return nil
+    end
+  end
 end

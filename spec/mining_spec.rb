@@ -42,4 +42,33 @@ describe Miner do
       end
     end
   end
+
+  context 'Opening a entire file and search for a word' do
+    before {
+      @mine_tester = Miner.new
+      @mine_tester.mining_f('files/hello_world.txt')
+    }
+
+    describe '#find' do
+      context 'searching for an existing word' do
+        subject do
+          "hello"
+        end
+
+        it 'should present the quatities of times it\' repeated' do
+          expect(@mine_tester.find(subject)).to eq "2 times"
+        end
+      end
+
+      context 'searching for an non-existing word' do
+        subject do
+          "foobar"
+        end
+
+        it 'should present nil' do
+          expect(@mine_tester.find(subject)).to be_nil
+        end
+      end
+    end
+  end
 end
